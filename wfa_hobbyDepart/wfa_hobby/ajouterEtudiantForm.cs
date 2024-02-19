@@ -39,24 +39,26 @@ namespace wfa_hobby
         private void ajouterButton_Click(object sender, EventArgs e)
         { 
             Etudiants etudiant = new Etudiants();
-           
+            ManagerEtudiants managerEtudiants = new ManagerEtudiants();
+            int nombreDeLigneAffecter = 0;
             try
             {
                 if (TextBoxSontRemplis())
                 {
                     //prendre les valeurs 
                     etudiant = PrendreLesValeursDesTextBox();
-                                    //appeler fonction d'ajout
+                    //appeler fonction d'ajout
+                   nombreDeLigneAffecter = managerEtudiants.AjouterEtudiants(etudiant);
                 }
                 else
                 {
                     MessageBox.Show("Remplisser toutes les valeurs");
                 }
             }
-            catch (Exception) 
+            catch (Exception ex) 
             {
-
-                throw;
+                MessageBox.Show(ex.Message,"Erreur",MessageBoxButtons.OK,MessageBoxIcon.Error);
+             
             }
 
         }

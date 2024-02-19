@@ -8,6 +8,16 @@ namespace wfa_hobby
 {
     internal class ManagerEtudiants
     {
+        private List<SqlParameter> definirParametreAjout(Etudiants etudiants)
+        {
+            List<SqlParameter> mesParametre = new List<SqlParameter>();
+            mesParametre.Add(new SqlParameter("@Prenom", etudiants.Prenom == string.Empty ? DBNull.Value : etudiants.Prenom));
+            mesParametre.Add(new SqlParameter("@Nom", etudiants.Nom == string.Empty ? DBNull.Value : etudiants.Nom));
+            mesParametre.Add(new SqlParameter("Cellulaire", etudiants.Cellulaire == string.Empty ? DBNull.Value : etudiants.Cellulaire));
+            mesParametre.Add(new SqlParameter("@Humour", etudiants.Humour == 0 ? DBNull.Value : etudiants.Humour));
+            mesParametre.Add(new SqlParameter("@No_Provenance", etudiants.No_provenance == 0 ? DBNull.Value : etudiants.No_provenance));
+            return mesParametre;
+        }
         public int AjouterEtudiants(Etudiants etudiants)
         {
          
@@ -23,11 +33,9 @@ namespace wfa_hobby
                         //ouvrir connection
                         //exec la commande
                         maCommande.CommandType = System.Data.CommandType.StoredProcedure;
-                        maCommande.Parameters.Add(new SqlParameter("@Prenom", etudiants.Prenom == string.Empty? DBNull.Value: etudiants.Prenom));
-                        maCommande.Parameters.Add(new SqlParameter("@Nom", etudiants.Nom == string.Empty ? DBNull.Value : etudiants.Nom));
-                        maCommande.Parameters.Add(new SqlParameter("Cellulaire", etudiants.Cellulaire == string.Empty ? DBNull.Value : etudiants.Cellulaire ));
-                        maCommande.Parameters.Add(new SqlParameter("@Humour", etudiants.Humour == 0 ? DBNull.Value : etudiants.Humour));
-                        maCommande.Parameters.Add(new SqlParameter("@No_Provenance", etudiants.No_provenance == 0 ? DBNull.Value : etudiants.No_provenance));
+                        List<SqlParameter> mesParametre;
+                        mesParametre = definirParametreAjout(etudiants);
+                        maCommande.Parameters.AddRange(mesParametre.ToArray());
                         maCommande.Connection.Open();
                         nombreDeLigneAffectee= maCommande.ExecuteNonQuery();
                     }

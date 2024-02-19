@@ -52,6 +52,7 @@ namespace wfa_hobby
                     if (nombreDeLigneAffecter > 0)
                     {
                         MessageBox.Show("Ajout avec succès");
+
                     }
                 }
                 else

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace wfa_hobby
 {
-    internal class ManagerEtudiants
+    internal class ManagerEtudiants:Manager
     {
         private List<SqlParameter> definirParametreAjout(Etudiants etudiants)
         {
@@ -24,7 +24,7 @@ namespace wfa_hobby
             int nombreDeLigneAffectee = 0;
             try
             {
-                using (var maConnection = new SqlConnection(Properties.Settings.Default.maConnectionString))
+                using (var maConnection = GetConnection())
                 {
                     using (var maCommande = new SqlCommand("ajouterEtudiant",maConnection))
                     {

@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace wfa_hobby
 {
-    internal class ManagerProvenance
+    internal class ManagerProvenance: Manager// : = hétite de ce qui suit
     {
         public List<Provenance> ListerProvenance()
         {
             List<Provenance> maListe = new List<Provenance>();
             try
             {
-                using (var maConnection = new SqlConnection(Properties.Settings.Default.maConnectionString))
+                using (var maConnection = GetConnection())
                 {
                     using (var maCommande = new SqlCommand("listerProvenances", maConnection))
                     {
                         maCommande.CommandType = System.Data.CommandType.StoredProcedure;
-                        maCommande.Connection = maConnection;
+                        maCommande.Connection.Open();
                         using (var monDataReader = maCommande.ExecuteReader())
                         {
                             while (monDataReader.Read())

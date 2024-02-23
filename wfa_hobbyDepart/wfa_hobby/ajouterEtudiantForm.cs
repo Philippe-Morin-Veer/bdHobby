@@ -19,7 +19,18 @@ namespace wfa_hobby
        
         private void ajouterEtudiantForm_Load(object sender, EventArgs e)
         {
-           
+           ManagerProvenance managerProvenance = new ManagerProvenance();
+            try
+            {
+               provenanceComboBox.DataSource= managerProvenance.ListerProvenance();
+                provenanceComboBox.DisplayMember= "LaProvenance";
+                provenanceComboBox.ValueMember = "no_provenance";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         private bool TextBoxSontRemplis()
         {
@@ -32,7 +43,7 @@ namespace wfa_hobby
             etudiants.Prenom = prenomTextBox.Text;
             etudiants.Cellulaire = cellulaireTextBox.Text;
             etudiants.Humour = (int)humourNumericUpDown.Value;
-            etudiants.No_provenance = 1;//remplacer plus tard
+            etudiants.No_provenance = (int)provenanceComboBox.SelectedValue; ;//remplacer plus tard
             return etudiants;
         }
 

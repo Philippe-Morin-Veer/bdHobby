@@ -8,7 +8,7 @@ namespace wfa_hobby
 {
     internal class ManagerEtudiants:Manager
     {
-        private List<SqlParameter> definirParametreAjout(Etudiants etudiants)
+        private List<SqlParameter>  definirParametreAjout (Etudiants etudiants)
         {
             List<SqlParameter> mesParametre = new List<SqlParameter>();
             mesParametre.Add(new SqlParameter("@Prenom", etudiants.Prenom == string.Empty ? DBNull.Value : etudiants.Prenom));

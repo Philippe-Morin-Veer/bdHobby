@@ -16,10 +16,10 @@ namespace wfa_hobby
             {
                 using (var maConnection = GetConnection())
                 {
-                    using (var maCommande = new SqlCommand("listerProvenances", maConnection))
+                    using (var maCommande = creerCommande("listerProvenances",null))
                     {
-                        maCommande.CommandType = System.Data.CommandType.StoredProcedure;
-                        maCommande.Connection.Open();
+                        //maCommande.CommandType = System.Data.CommandType.StoredProcedure;
+                        //maCommande.Connection.Open();
                         using (var monDataReader = maCommande.ExecuteReader())
                         {
                             while (monDataReader.Read())

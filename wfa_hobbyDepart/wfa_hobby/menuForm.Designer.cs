@@ -32,6 +32,7 @@
             étudiantToolStripMenuItem = new ToolStripMenuItem();
             ajoutToolStripMenuItem = new ToolStripMenuItem();
             modifierToolStripMenuItem = new ToolStripMenuItem();
+            associerHobbyÀUnÉtudiantToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,34 +44,41 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(8, 3, 0, 3);
-            menuStrip1.Size = new Size(1100, 38);
+            menuStrip1.Size = new Size(1100, 31);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // étudiantToolStripMenuItem
             // 
-            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem });
+            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem, associerHobbyÀUnÉtudiantToolStripMenuItem });
             étudiantToolStripMenuItem.Name = "étudiantToolStripMenuItem";
-            étudiantToolStripMenuItem.Size = new Size(99, 32);
+            étudiantToolStripMenuItem.Size = new Size(79, 25);
             étudiantToolStripMenuItem.Text = "Étudiant";
             // 
             // ajoutToolStripMenuItem
             // 
             ajoutToolStripMenuItem.Name = "ajoutToolStripMenuItem";
-            ajoutToolStripMenuItem.Size = new Size(250, 32);
+            ajoutToolStripMenuItem.Size = new Size(281, 26);
             ajoutToolStripMenuItem.Text = "Ajouter";
             ajoutToolStripMenuItem.Click += ajoutToolStripMenuItem_Click;
             // 
             // modifierToolStripMenuItem
             // 
             modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            modifierToolStripMenuItem.Size = new Size(250, 32);
+            modifierToolStripMenuItem.Size = new Size(281, 26);
             modifierToolStripMenuItem.Text = "Modifier/détruire";
             modifierToolStripMenuItem.Click += modifierToolStripMenuItem_Click;
             // 
+            // associerHobbyÀUnÉtudiantToolStripMenuItem
+            // 
+            associerHobbyÀUnÉtudiantToolStripMenuItem.Name = "associerHobbyÀUnÉtudiantToolStripMenuItem";
+            associerHobbyÀUnÉtudiantToolStripMenuItem.Size = new Size(281, 26);
+            associerHobbyÀUnÉtudiantToolStripMenuItem.Text = "Associer hobby à un étudiant";
+            associerHobbyÀUnÉtudiantToolStripMenuItem.Click += associerHobbyÀUnÉtudiantToolStripMenuItem_Click;
+            // 
             // menuForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1100, 630);
             Controls.Add(menuStrip1);
@@ -92,5 +100,6 @@
         private ToolStripMenuItem étudiantToolStripMenuItem;
         private ToolStripMenuItem ajoutToolStripMenuItem;
         private ToolStripMenuItem modifierToolStripMenuItem;
+        private ToolStripMenuItem associerHobbyÀUnÉtudiantToolStripMenuItem;
     }
 }

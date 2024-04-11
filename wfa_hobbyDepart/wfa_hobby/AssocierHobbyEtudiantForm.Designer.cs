@@ -41,7 +41,7 @@
             cmbBx_Etudiant.FormattingEnabled = true;
             cmbBx_Etudiant.Location = new Point(106, 15);
             cmbBx_Etudiant.Name = "cmbBx_Etudiant";
-            cmbBx_Etudiant.Size = new Size(195, 33);
+            cmbBx_Etudiant.Size = new Size(374, 33);
             cmbBx_Etudiant.TabIndex = 0;
             // 
             // cmbBx_Hobby
@@ -50,7 +50,7 @@
             cmbBx_Hobby.FormattingEnabled = true;
             cmbBx_Hobby.Location = new Point(106, 57);
             cmbBx_Hobby.Name = "cmbBx_Hobby";
-            cmbBx_Hobby.Size = new Size(195, 33);
+            cmbBx_Hobby.Size = new Size(374, 33);
             cmbBx_Hobby.TabIndex = 1;
             // 
             // btn_Associer
@@ -58,7 +58,7 @@
             btn_Associer.Font = new Font("Segoe UI", 14F);
             btn_Associer.Location = new Point(12, 102);
             btn_Associer.Name = "btn_Associer";
-            btn_Associer.Size = new Size(301, 42);
+            btn_Associer.Size = new Size(468, 42);
             btn_Associer.TabIndex = 2;
             btn_Associer.Text = "Associer l'étudiant à un hobby";
             btn_Associer.UseVisualStyleBackColor = true;

@@ -14,6 +14,7 @@ namespace wfa_hobby
         private string cellulaire;
         private int humour;
         private int no_provenance;
+        private string nomComplet;
         
 
         public int No_etudiants { get => no_etudiants; set => no_etudiants = value; }
@@ -22,5 +23,6 @@ namespace wfa_hobby
         public string Cellulaire { get => cellulaire; set => cellulaire = value; }
         public int Humour { get => humour; set => humour = value; }
         public int No_provenance { get => no_provenance; set => no_provenance = value; }
+        public string NomComplet { get { return $"{Prenom} , {Nom} ,{Cellulaire}"; } }
     }
 }

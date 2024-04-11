@@ -48,5 +48,47 @@ namespace wfa_hobby
             }
             return nombreDeLigneAffectee;
         }
+        public List<Etudiants> ListerEtudiants()
+        {
+            List<Etudiants> etudiants = new List<Etudiants>();
+            try
+            {
+                using (var maConnection = GetConnection())
+                {
+                    using (var maCommande = creerCommande("ListerEtudiants", null))
+                    {
+                        using (var mondataReader = maCommande.ExecuteReader())
+                        {
+                            while (mondataReader.Read())
+                            {
+                                Etudiants etudiant = new Etudiants();
+                                etudiant.No_etudiants = (int)mondataReader["no_etudiants"];
+                                if (mondataReader["Cellulaire"] == DBNull.Value)
+                                {
+                                    etudiant.Cellulaire = null;
+                                }
+                                else
+                                {
+                                    etudiant.Cellulaire = mondataReader["Cellulaire"].ToString();
+                                }
+                                etudiant.No_provenance = (int)mondataReader["no_provenance"];
+                                etudiant.Prenom = mondataReader["prenom"].ToString();
+                                etudiant.Nom = mondataReader["nom"].ToString();
+                                etudiant.Humour = (int)mondataReader["humour"];
+                                etudiants.Add(etudiant);
+                                
+                            }
+                        }
+                    }
+                    return etudiants;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        
+
     }
 }

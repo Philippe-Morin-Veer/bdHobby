@@ -33,6 +33,7 @@
             ajoutToolStripMenuItem = new ToolStripMenuItem();
             modifierToolStripMenuItem = new ToolStripMenuItem();
             associerHobbyÀUnÉtudiantToolStripMenuItem = new ToolStripMenuItem();
+            compterLesHobbyToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // étudiantToolStripMenuItem
             // 
-            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem, associerHobbyÀUnÉtudiantToolStripMenuItem });
+            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem, associerHobbyÀUnÉtudiantToolStripMenuItem, compterLesHobbyToolStripMenuItem });
             étudiantToolStripMenuItem.Name = "étudiantToolStripMenuItem";
             étudiantToolStripMenuItem.Size = new Size(79, 25);
             étudiantToolStripMenuItem.Text = "Étudiant";
@@ -75,6 +76,13 @@
             associerHobbyÀUnÉtudiantToolStripMenuItem.Size = new Size(281, 26);
             associerHobbyÀUnÉtudiantToolStripMenuItem.Text = "Associer hobby à un étudiant";
             associerHobbyÀUnÉtudiantToolStripMenuItem.Click += associerHobbyÀUnÉtudiantToolStripMenuItem_Click;
+            // 
+            // compterLesHobbyToolStripMenuItem
+            // 
+            compterLesHobbyToolStripMenuItem.Name = "compterLesHobbyToolStripMenuItem";
+            compterLesHobbyToolStripMenuItem.Size = new Size(281, 26);
+            compterLesHobbyToolStripMenuItem.Text = "Compter les hobby";
+            compterLesHobbyToolStripMenuItem.Click += compterLesHobbyToolStripMenuItem_Click;
             // 
             // menuForm
             // 
@@ -101,5 +109,6 @@
         private ToolStripMenuItem ajoutToolStripMenuItem;
         private ToolStripMenuItem modifierToolStripMenuItem;
         private ToolStripMenuItem associerHobbyÀUnÉtudiantToolStripMenuItem;
+        private ToolStripMenuItem compterLesHobbyToolStripMenuItem;
     }
 }

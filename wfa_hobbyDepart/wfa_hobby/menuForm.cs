@@ -27,5 +27,11 @@ namespace wfa_hobby
             AssocierHobbyEtudiantForm associerHobbyEtudiantForm = new AssocierHobbyEtudiantForm();
             associerHobbyEtudiantForm.ShowDialog();
         }
+
+        private void compterLesHobbyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompterHobbyForm compterHobbyForm = new CompterHobbyForm();
+            compterHobbyForm.ShowDialog();
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace wfa_hobby
                 ManagerHobby managerHobby = new ManagerHobby();
                 int nombreDeLigneAffectee = 0;
                 nombreDeLigneAffectee = managerHobby.AjouterEtudiantHobby(no_etudiant, no_hobby);
-                if(nombreDeLigneAffectee > 0)
+                if (nombreDeLigneAffectee > 0)
                 {
                     MessageBox.Show("Ajout avec succès");
                 }
@@ -34,7 +34,7 @@ namespace wfa_hobby
             catch (Exception ex)
             {
 
-               MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -50,11 +50,31 @@ namespace wfa_hobby
                 cmbBx_Etudiant.ValueMember = "No_etudiants";
                 cmbBx_Etudiant.DisplayMember = "NomComplet";
                 cmbBx_Etudiant.DataSource = managerEtudiants.ListerEtudiants();
+                cmbBx_Etudiant.SelectedValue = "";
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbBx_Etudiant_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                ManagerEtudiantHobby managerEtudiantHobby = new ManagerEtudiantHobby();
+                dataGridView_HobbyEtudiant.DataSource = managerEtudiantHobby.ListerHobbyEtudiant((int)cmbBx_Etudiant.SelectedValue);
+                dataGridView_HobbyEtudiant.Columns["no_hobby"].Visible = false;
+                dataGridView_HobbyEtudiant.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView_HobbyEtudiant.RowHeadersVisible = false;
+                dataGridView_HobbyEtudiant.Columns["Lehobby"].HeaderText = "Les Hobby de l'étudiant";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

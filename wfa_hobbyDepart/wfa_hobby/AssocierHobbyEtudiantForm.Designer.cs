@@ -33,6 +33,8 @@
             btn_Associer = new Button();
             lbl_Etudiant = new Label();
             lbl_Hobby = new Label();
+            dataGridView_HobbyEtudiant = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_HobbyEtudiant).BeginInit();
             SuspendLayout();
             // 
             // cmbBx_Etudiant
@@ -43,6 +45,7 @@
             cmbBx_Etudiant.Name = "cmbBx_Etudiant";
             cmbBx_Etudiant.Size = new Size(374, 33);
             cmbBx_Etudiant.TabIndex = 0;
+            cmbBx_Etudiant.SelectionChangeCommitted += cmbBx_Etudiant_SelectionChangeCommitted;
             // 
             // cmbBx_Hobby
             // 
@@ -84,11 +87,20 @@
             lbl_Hobby.TabIndex = 4;
             lbl_Hobby.Text = "Hobby";
             // 
+            // dataGridView_HobbyEtudiant
+            // 
+            dataGridView_HobbyEtudiant.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_HobbyEtudiant.Location = new Point(12, 161);
+            dataGridView_HobbyEtudiant.Name = "dataGridView_HobbyEtudiant";
+            dataGridView_HobbyEtudiant.Size = new Size(451, 426);
+            dataGridView_HobbyEtudiant.TabIndex = 5;
+            // 
             // AssocierHobbyEtudiantForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(997, 599);
+            Controls.Add(dataGridView_HobbyEtudiant);
             Controls.Add(lbl_Hobby);
             Controls.Add(lbl_Etudiant);
             Controls.Add(btn_Associer);
@@ -97,6 +109,7 @@
             Name = "AssocierHobbyEtudiantForm";
             Text = "AssocierHobbyEtudiantForm";
             Load += AssocierHobbyEtudiantForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView_HobbyEtudiant).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -108,5 +121,6 @@
         private Button btn_Associer;
         private Label lbl_Etudiant;
         private Label lbl_Hobby;
+        private DataGridView dataGridView_HobbyEtudiant;
     }
 }

@@ -86,5 +86,38 @@ namespace wfa_hobby
             sqlParameters.Add(new SqlParameter("@no_hobby", no_hobby == 0 ? DBNull.Value : no_hobby));
             return sqlParameters;
         }
+        public List<Hobby> ListerHobbyEtudiant(int no_etudiant)
+        {
+            try
+            {
+                List<Hobby>Hobbys = new List<Hobby>();
+                using(var maConnection = GetConnection())
+                {
+                   List<SqlParameter> mesParametres = new List<SqlParameter>();
+                    mesParametres.Add(new SqlParameter("@no_etudiant", no_etudiant ==0? DBNull.Value : no_etudiant));
+                    using(var maCommande = creerCommande("AffichezHobbyEtudiant",mesParametres))
+                    {
+                        using(var dataReader = maCommande.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Hobby hobby = new Hobby();
+                                //nom de la colonne dans sql server
+                                hobby.No_Hobby = (int)dataReader["no_hobby"] ;
+                                hobby.LeHobby = dataReader["hobby"].ToString();
+                                Hobbys.Add(hobby);
+                            }
+                        }
+           
+                    }
+                }
+                return Hobbys;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

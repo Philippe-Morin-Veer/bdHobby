@@ -34,6 +34,7 @@
             modifierToolStripMenuItem = new ToolStripMenuItem();
             associerHobbyÀUnÉtudiantToolStripMenuItem = new ToolStripMenuItem();
             compterLesHobbyToolStripMenuItem = new ToolStripMenuItem();
+            regexFormToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             // étudiantToolStripMenuItem
             // 
-            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem, associerHobbyÀUnÉtudiantToolStripMenuItem, compterLesHobbyToolStripMenuItem });
+            étudiantToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ajoutToolStripMenuItem, modifierToolStripMenuItem, associerHobbyÀUnÉtudiantToolStripMenuItem, compterLesHobbyToolStripMenuItem, regexFormToolStripMenuItem });
             étudiantToolStripMenuItem.Name = "étudiantToolStripMenuItem";
             étudiantToolStripMenuItem.Size = new Size(79, 25);
             étudiantToolStripMenuItem.Text = "Étudiant";
@@ -84,6 +85,13 @@
             compterLesHobbyToolStripMenuItem.Text = "Compter les hobby";
             compterLesHobbyToolStripMenuItem.Click += compterLesHobbyToolStripMenuItem_Click;
             // 
+            // regexFormToolStripMenuItem
+            // 
+            regexFormToolStripMenuItem.Name = "regexFormToolStripMenuItem";
+            regexFormToolStripMenuItem.Size = new Size(281, 26);
+            regexFormToolStripMenuItem.Text = "Regex Form";
+            regexFormToolStripMenuItem.Click += regexFormToolStripMenuItem_Click;
+            // 
             // menuForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -110,5 +118,6 @@
         private ToolStripMenuItem modifierToolStripMenuItem;
         private ToolStripMenuItem associerHobbyÀUnÉtudiantToolStripMenuItem;
         private ToolStripMenuItem compterLesHobbyToolStripMenuItem;
+        private ToolStripMenuItem regexFormToolStripMenuItem;
     }
 }

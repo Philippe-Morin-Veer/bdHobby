@@ -33,5 +33,11 @@ namespace wfa_hobby
             CompterHobbyForm compterHobbyForm = new CompterHobbyForm();
             compterHobbyForm.ShowDialog();
         }
+
+        private void regexFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegexForm regexForm = new RegexForm();
+            regexForm.ShowDialog();
+        }
     }
 }
